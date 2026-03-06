@@ -1,0 +1,182 @@
+Mobile Testing:
+---------------
+
+Day - 1:
+--------
+
+Installation and Configuration
+
+Tools to be installed:
+
+1. Android SDK
+2. Node JS
+3. Appium & UI Automator 2
+4. Appium Inspector
+
+Android SDK Installation Setup:
+---------------------------------
+
+Step 1:
+-------
+
+Download the Android SDK application file from
+https://greentechnologys.com/selenium-training-in-chennai.html
+
+Step 2:
+-------
+
+Unzip the downloaded ZIP file and copy the subfolder "cmdline-tools".
+Then, create a folder in the C drive following this path:
+
+C:/softwares/android_sdk
+
+Paste the "cmdline-tools" folder inside "android_sdk".
+
+Step 3:
+-------
+
+Create a new folder inside "cmdline-tools" and name it "latest".
+
+Step 4:
+-------
+
+Cut the following files and folders from "cmdline-tools":
+
+- bin
+- lib
+- NOTICE
+- source.properties
+
+Paste them inside the "latest" folder you created in Step 3.
+
+Step 5:
+-------
+
+Set the System Environment Variable to include the bin path for accessing sdkmanager.
+
+Step 6:
+-------
+
+Run the following command to install platform-tools and the required platform package:
+
+sdkmanager "platform-tools" "platforms;android-33"
+
+Step 7:
+-------
+
+When prompted in the Command Prompt, type Y and press Enter to accept the licenses and proceed with the installation.
+
+Wait for the installation to complete. Once done, the platform-tools and platform package will be successfully installed.
+
+Step 8:
+-------
+
+Verify that the platform-tools and platforms folders have been created in the android_sdk folder.
+
+Step 9:
+-------
+
+Create the ANDROID_HOME environment variable to set the Android SDK folder as the home path.
+
+Step 10:
+--------
+
+Set the platform-tools path in the environment variable so you can access adb from anywhere.
+
+Step 11:
+--------
+
+Open Command Prompt and execute the ADB command to verify that the Android Debug Bridge (ADB) is working correctly.
+
+Step 12:
+--------
+
+Verify that you see ADB options to confirm that the ADB command is working properly.
+
+
+
+Day - 2
+------
+
+Node JS Installation:
+---------------------
+
+Step 1:
+-------
+
+Download the Node.js application file from
+https://greentechnologys.com/selenium-training-in-chennai.html
+
+– Mobile Automation Guideline file – a .msi Windows installer file will be downloaded.
+
+Step 2:
+-------
+
+Follow the usual installation process:
+
+Double-click the downloaded .msi file to open the installer.
+
+Follow the on-screen instructions and click Next until the installation is complete.
+
+Step 3:
+-------
+
+After installation, open Command Prompt and run the following commands to verify the installation:
+
+npm -v
+node -v
+
+Appium Installation Commands:
+-----------------------------
+
+Step 1:
+-------
+
+Open Command Prompt after successful Node.js installation, and run the following command to install Appium:
+
+npm install -g Appium
+
+Step 2:
+-------
+
+Wait until the installation process completes. Once it is done, verify the installation by running the following command:
+
+appium -v
+
+UI Automator2 Installation:
+---------------------------
+
+Step 1:
+-------
+
+To install the UIAutomator2 driver for Appium, run the following command in Command Prompt:
+
+appium driver install uiautomator2
+
+This will install the UIAutomator2 driver, which is used for automating Android devices.
+
+Step 2:
+-------
+
+After the installation completes, verify the installed drivers by running the following command:
+
+appium driver list
+
+This command will display the list of available Appium drivers, including UIAutomator2 if it was installed successfully.
+
+
+{
+  "platformName": "android",
+  "platformVersion": "12",
+  "deviceName": "emulator-5554",
+  "automationName": "Uiautomator2",
+  "appPackage": "com.omr_branch",
+  "appActivity": "com.omr_branch.MainActivity"
+}
+
+
+adb shell dumpsys window displays | findstr "mCurrentFocus"
+
+
+ com.samsung.android.dialer
+ com.samsung.android.dialer.DialtactsActivity
