@@ -180,3 +180,60 @@ adb shell dumpsys window displays | findstr "mCurrentFocus"
 
  com.samsung.android.dialer
  com.samsung.android.dialer.DialtactsActivity
+
+
+
+Launch App through Automation:
+------------------------------
+
+Required dependency:
+--------------------
+
+-> java-client
+
+
+Sample Code:
+------------
+
+import java.net.URL;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import io.appium.java_client.android.AndroidDriver;
+
+public class LaunchApp {
+
+    public static void main(String[] args) throws Exception {
+
+        DesiredCapabilities caps = new DesiredCapabilities();
+
+        // Mobile platform
+        caps.setCapability("platformName", "Android");
+
+        // Device name
+        caps.setCapability("deviceName", "Android Device");
+
+        // Automation engine
+        caps.setCapability("automationName", "UiAutomator2");
+
+        // App package
+        caps.setCapability("appPackage", "com.android.settings");
+
+        // App activity
+        caps.setCapability("appActivity", "com.android.settings.Settings");
+
+        // Appium server URL
+        URL url = new URL("http://127.0.0.1:4723");
+
+        // Start driver session
+        AndroidDriver driver = new AndroidDriver(url, caps);
+
+        System.out.println("App Launched Successfully");
+
+    }
+}
+
+
+URL - Connect to Appium Server
+
+DesiredCapabilities - Define device & app details
+
+AndroidDriver - Communicate with Android device
