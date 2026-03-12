@@ -237,3 +237,26 @@ URL - Connect to Appium Server
 DesiredCapabilities - Define device & app details
 
 AndroidDriver - Communicate with Android device
+
+Gestures:
+---------
+
+-> Scroll up
+-> Scroll down
+
+
+Scroll up:
+----------
+
+1. Finger move
+2. Finger down
+3. 0.5 second
+4. move
+5. Finger up
+
+
+Coornidates:
+-------------
+
+
+(x,y)
