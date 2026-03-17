@@ -34,15 +34,19 @@ public class AppLaunch {
 		caps.setCapability("appium:automationName", "UiAutomator2");
 
 		// appPackage
-		caps.setCapability("appium:appPackage", "com.android.settings");
+		caps.setCapability("appium:appPackage", "com.google.android.apps.maps");
 
 		// appActivity
-		caps.setCapability("appium:appActivity", "com.android.settings.Settings");
+		caps.setCapability("appium:appActivity", "com.google.android.maps.MapsActivity");
 
 		// connecting to the server
 		URL url = new URL("http://127.0.0.1:4723/");
 
 		WebDriver driver = new AndroidDriver(url, caps);
+
+		Thread.sleep(5000);
+
+		System.out.println("App launched");
 
 		Dimension size = driver.manage().window().getSize();
 
@@ -54,11 +58,11 @@ public class AppLaunch {
 
 		System.out.println("Height : " + height);
 
-		int startX = width / 2;
-		int startY = (int) (height * 0.8);
+		int startX = (int) (width * 0.8);
+		int startY = height / 2;
 
-		int endX = startX;
-		int endY = (int) (height * 0.2);
+		int endX = (int) (width * 0.2);
+		int endY = startY;
 
 		// Scroll down
 		// Create a finger
@@ -81,23 +85,6 @@ public class AppLaunch {
 
 		Thread.sleep(3000);
 
-		System.out.println("Scroll down performed");
-
-		// scroll up
-
-		Sequence swipe1 = new Sequence(input, 1);
-
-		swipe1.addAction(input.createPointerMove(Duration.ZERO, PointerInput.Origin.viewport(), startX, endY));
-
-		swipe1.addAction(input.createPointerDown(PointerInput.MouseButton.LEFT.asArg()));
-
-		swipe1.addAction(input.createPointerMove(Duration.ofMillis(800), PointerInput.Origin.viewport(), endX, startY));
-
-		swipe1.addAction(input.createPointerUp(PointerInput.MouseButton.LEFT.asArg()));
-
-		((RemoteWebDriver) driver).perform(Arrays.asList(swipe1));
-
-		System.out.println("Scroll up performed");
 	}
 
 }
